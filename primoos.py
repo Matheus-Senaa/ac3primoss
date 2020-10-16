@@ -7,28 +7,30 @@ app = Flask(__name__)
 @app.route('/')
 def nao_entre_em_panico():
 
-limite = 100
+def nao_entre_em_panico():
 
-cont = 1
-m = 1
-numero = 3
+	limite = 100
 
-primos = "2, "
+	cont = 1
+	m = 1
+	numero = 3
 
-while m < limite:
-	ehprimo = 1
-	for a in range(2, numero):
-		if numero % a == 0:
-			ehprimo = 0
-			break
-	if(ehprimo):
-		primos = primos + str(numero) + ","
-		m += 1
-		if (m % 10 == 0):
-			primos = primos + "<br>"
-	numero += 1
+	primos = "2, "
 
-return primos
+	while m < limite:
+		ehprimo = 1
+		for a in range(2, numero):
+			if numero % a == 0:
+				ehprimo = 0
+				break
+		if(ehprimo):
+			primos = primos + str(numero) + ","
+			m += 1
+			if (m % 10 == 0):
+				primos = primos + "<br>"
+		numero += 1
+
+	return primos
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
